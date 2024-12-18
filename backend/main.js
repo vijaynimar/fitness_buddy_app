@@ -4,6 +4,7 @@ import { userRouter } from "./routers/router.js"
 const app=express()
 const Port=2999
 connection()
+app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(userRouter)
 
