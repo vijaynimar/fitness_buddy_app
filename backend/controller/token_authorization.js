@@ -13,7 +13,8 @@ export const tokenVerify=async(req,res,next)=>{
         }
         next()
     }catch(err){
-        res.status(500).send("error in token xyz",err)
+        return res.status(500).json({ error: "Error in token", details: err.message });
+
     }
 
 
