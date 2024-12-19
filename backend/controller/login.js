@@ -12,7 +12,8 @@ export const loginUser=async(req,res)=>{
     const hashPassword=await argon2.verify(userExists.password,password)
     if(hashPassword){
         const token=jwt.sign({ 
-            username:userExists.username
+            username:userExists.username,
+            email:userExists.email
         },tok,
         {
             expiresIn:"7 days"
