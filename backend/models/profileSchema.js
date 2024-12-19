@@ -22,10 +22,7 @@ const profileSchema=new Schema({
         enum:["Yoga", "Running", "Weightlifting"]
     },
     fitneddGoals:{type:String,required:true},
-    profilePicture:{type:URL},
-
-
-
+    profilePicture:{type:URL}
 })
 
 
