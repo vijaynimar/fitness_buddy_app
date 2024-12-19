@@ -35,7 +35,7 @@ export const forgotPassword=async(req,res)=>{
         await newOtp.save()
         const mailOptions=({
             to:email,
-            subject:`${email}Reset Password OTP FITNESS BUDDY`,
+            subject:`Reset Password OTP FITNESS BUDDY`,
             text:ot.toString(), 
             html:`<h1>Reset Password <h1> ${ot}`
         })
