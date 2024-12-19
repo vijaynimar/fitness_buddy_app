@@ -43,6 +43,7 @@ export const signIn=async(req,res)=>{
     await newUser.save()
     res.json({newUser})
     }catch(err){
+        console.log(err);
         res.send("error in sign-in")
     }
 }

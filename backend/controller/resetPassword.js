@@ -5,7 +5,7 @@ export const resetpass=async(req,res)=>{
     const {email,otp,newPassword}=req.body
     
     const hash=await argon2.hash(newPassword)
-    console.log(otp,newPassword);
+    // console.log(otp,newPassword);
     try{
         const emailExist = await ootp.findOne({email:email})
     if(!emailExist){ 
