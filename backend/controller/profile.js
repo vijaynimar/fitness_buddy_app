@@ -53,7 +53,8 @@ export const getProfile=async(req,res)=>{
         res.status(201).json({dataProfile})
 
     }catch(err){
-        return res.status(404).send("error in get photos",err)
+    res.status(404).json({ error: "Error in token", details: err.message });
+
     }
 
 }
