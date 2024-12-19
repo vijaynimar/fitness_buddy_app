@@ -34,7 +34,7 @@ export const profileData=async(req,res)=>{
         res.status(200).send(newProfile)
 
     }catch(err){
-        return res.status(500).send({ error: "Internal server error", details: err.message });
+        return res.status(404).send({ error: "Internal server error", details: err.message });
 
     }
 }
