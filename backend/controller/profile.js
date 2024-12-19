@@ -53,7 +53,7 @@ export const getProfile=async(req,res)=>{
         res.status(201).json({dataProfile})
 
     }catch(err){
-        return res.status(501).send("error in get photos",err)
+        return res.status(404).send("error in get photos",err)
     }
 
 }
