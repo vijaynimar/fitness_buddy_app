@@ -10,7 +10,10 @@ userRouter.post("/signin",signIn)
 userRouter.post("/login",loginUser)
 userRouter.post("/forgot-password",forgotPassword)
 userRouter.post("/resetPassword",resetpass)
-
+userRouter.get("/vijay",(req,res)=>{
+    console.log("hello vijay");
+    res.send("hello vijay")
+})
 userRouter.use(tokenVerify)
 
 

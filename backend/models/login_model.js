@@ -7,4 +7,4 @@ const createUser=new Schema({
     password:{type:String,required:true}
 })
 const user=model("user",createUser)
-export {user}   
+export {user} 
