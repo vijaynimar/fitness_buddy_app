@@ -2,6 +2,7 @@ import Router from "express";
 import { loginUser } from "../controller/login.js";
 import { signIn } from "../controller/login.js";
 import { tokenVerify } from "../controller/token_authorization.js";
+import {getWorkoutDataForDay} from "../controller/particularDayData.js"
 import {forgotPassword} from "../controller/fotgotPassword.js"
 import { resetpass } from "../controller/resetPassword.js";
 import { profileData } from "../controller/profile.js";
@@ -22,6 +23,7 @@ userRouter.post("/resetPassword",resetpass)
 
 
 userRouter.use(tokenVerify)
+userRouter.get("/getWorkoutDataForDay",getWorkoutDataForDay)
 userRouter.post("/profile",profileData)
 userRouter.get("/getProfile",getProfile)
 userRouter.get("/getBuddies",getBuddies)

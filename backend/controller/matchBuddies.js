@@ -15,6 +15,4 @@ export const getBuddies=async(req,res)=>{
     }catch(err){
         return res.status(404).send("error in get Buddies",err)
     }
-
-
 }
