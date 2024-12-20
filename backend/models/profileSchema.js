@@ -14,7 +14,7 @@ const profileSchema=new Schema({
     preferredWorkout:{
         type:String,
         required:true,
-        enum:["Yoga", "Running", "Weightlifting"]
+        enum:["running","weightlifting","yoga","cardio"]
     },
     fitnessGoals:{type:String,required:true},
     createdAt:{

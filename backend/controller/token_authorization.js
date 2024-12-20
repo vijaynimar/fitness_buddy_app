@@ -7,7 +7,7 @@ export const tokenVerify=async(req,res,next)=>{
     // console.log(token);
     try{
         const verification= jwt.verify(token,jwt_key)
-        console.log("token verified");
+        // console.log("token verified");
         if(!verification){
             return res.status(201).send("token verification error")
         }

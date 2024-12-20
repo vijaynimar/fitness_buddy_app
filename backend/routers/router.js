@@ -7,29 +7,27 @@ import { resetpass } from "../controller/resetPassword.js";
 import { profileData } from "../controller/profile.js";
 import { getProfile } from "../controller/profile.js";
 import { getBuddies } from "../controller/matchBuddies.js";
+import { workoutUpdate } from "../controller/weekWorkout.js";
+import { weeklyProgress } from "../controller/weekWorkoutTrack.js";
 const userRouter=Router()
 
 
 
 userRouter.post("/signin",signIn)
-userRouter.post("/login",loginUser) 
+userRouter.post("/login",loginUser)  
 userRouter.post("/forgot-password",forgotPassword)
 userRouter.post("/resetPassword",resetpass)
-userRouter.get("/vijay",(req,res)=>{
-    console.log("hello vijay"); 
-    res.send("hello vijay")
-})
+
+
 userRouter.use(tokenVerify)
 userRouter.post("/profile",profileData)
 userRouter.get("/getProfile",getProfile)
 userRouter.get("/getBuddies",getBuddies)
 
+userRouter.post("/workoutUpdate",workoutUpdate)
+userRouter.get("/weekProgress",weeklyProgress)
 
 
-userRouter.get("/vijay",(req,res)=>{
-    res.send("vijay")
-    console.log("vijay");
-})
 
 
 export {userRouter} 
