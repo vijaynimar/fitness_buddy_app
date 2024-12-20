@@ -7,49 +7,49 @@ const workoutTrackingSchema = new Schema({
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:String}
             }
         ],
         tuesday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:String}
             }
         ],
         wednesday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:String}
             }
         ],
         thursday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:String}
             }
         ],
         friday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:String}
             }
         ],
         saturday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:String}
             }
         ],
         sunday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:String}
             }
         ]
     }

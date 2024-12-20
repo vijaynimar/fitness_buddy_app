@@ -12,6 +12,7 @@ const workouts=["running","weightlifting","yoga","cardio"]
 export const workoutUpdate = async (req, res) => {
   const token = req.headers["authorization"];
   const { preferredWorkout, workoutDuration } = req.body;
+  console.log(typeof workoutDuration);
   // console.log(preferredWorkout,workoutDuration);
   
   try {
