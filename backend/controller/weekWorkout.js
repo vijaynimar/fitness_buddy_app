@@ -12,20 +12,21 @@ const workouts=["running","weightlifting","yoga","cardio"]
 export const workoutUpdate = async (req, res) => {
   const token = req.headers["authorization"];
   const { preferredWorkout, workoutDuration } = req.body;
+  console.log(preferredWorkout,workoutDuration);
   
   try {
     let h=0
         for(let i=0;i<workouts.length;i++){
             if(preferredWorkout==workouts[i]){
-                console.log(caloriesBrn[i]);
-                console.log(workouts[i]);
+                // console.log(caloriesBrn[i]);
+                // console.log(workouts[i]);
                 h=i
                 break
             }
         }  
-    const totalCaloriesBurn=workoutDuration*caloriesBrn[h]
-    console.log(totalCaloriesBurn);
-    // Define the days of the week
+    const caloriesBurn=workoutDuration*caloriesBrn[h]
+    console.log(caloriesBurn);
+   
     const daysOfWeek = [
       "sunday",
       "monday",
@@ -56,7 +57,7 @@ export const workoutUpdate = async (req, res) => {
             {
               preferredWorkout,
               workoutDuration,
-              caloriesBurn:totalCaloriesBurn
+              caloriesBurn
             },
           ],
         },
@@ -80,6 +81,7 @@ export const workoutUpdate = async (req, res) => {
     data.weekWorkouts[currentDay].push({
       preferredWorkout,
       workoutDuration,
+      caloriesBurn
     });
 
    

@@ -7,49 +7,49 @@ const workoutTrackingSchema = new Schema({
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:Number, required: true}
             }
         ],
         tuesday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:Number, required: true}
             }
         ],
         wednesday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:Number, required: true}
             }
         ],
         thursday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:Number, required: true}
             }
         ],
         friday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:Number, required: true}
             }
         ],
         saturday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:Number, required: true}
             }
         ],
         sunday: [
             {
                 preferredWorkout: { type: String, required: true },
                 workoutDuration: { type: Number, required: true },
-                caloriesBurn:{type:Number}
+                caloriesBurn:{type:Number, required: true}
             }
         ]
     }
