@@ -199,7 +199,7 @@ export const workoutUpdate = async (req, res) => {
         message: `Workout data updated for ${currentDay}`,
         data: data.weekWorkouts[currentDay], // Send only today's workout data
       });
-
+ 
   } catch (err) {
     console.log(err);
     return res
