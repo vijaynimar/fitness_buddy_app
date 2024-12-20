@@ -50,7 +50,7 @@ export const weeklyProgress = async (req, res) => {
         data: {
           totalCaloriesBurned,
           totalDuration,
-          caloriesBurn
+          totalCaloriesBurned
         },
       });
   

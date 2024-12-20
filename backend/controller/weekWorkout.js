@@ -12,7 +12,7 @@ const workouts=["running","weightlifting","yoga","cardio"]
 export const workoutUpdate = async (req, res) => {
   const token = req.headers["authorization"];
   const { preferredWorkout, workoutDuration } = req.body;
-  console.log(preferredWorkout,workoutDuration);
+  // console.log(preferredWorkout,workoutDuration);
   
   try {
     let h=0
@@ -24,8 +24,8 @@ export const workoutUpdate = async (req, res) => {
                 break
             }
         }  
-    const caloriesBurn=workoutDuration*caloriesBrn[h]
-    console.log(caloriesBurn);
+    const totalCaloriesBurn=workoutDuration*caloriesBrn[h]
+    // console.log(caloriesBurn);
    
     const daysOfWeek = [
       "sunday",
@@ -40,14 +40,14 @@ export const workoutUpdate = async (req, res) => {
     
     const currentDayIndex = new Date().getDay();
     const currentDay =   daysOfWeek[currentDayIndex]
-
+    // console.log(currentDay);
    
     const decoded = jwt.verify(token, jwtKey);
     const { username, email } = decoded;
 
     
     let data = await workout.findOne({ email });
-
+// console.log(data);
     if (!data) {
       
       const newWorkoutData = new workout({
@@ -57,13 +57,13 @@ export const workoutUpdate = async (req, res) => {
             {
               preferredWorkout,
               workoutDuration,
-              caloriesBurn
+              caloriesBurn:totalCaloriesBurn
             },
           ],
         },
       });
 
-      
+      console.log(newWorkoutData);
       await newWorkoutData.save();
 
       return res
@@ -81,7 +81,7 @@ export const workoutUpdate = async (req, res) => {
     data.weekWorkouts[currentDay].push({
       preferredWorkout,
       workoutDuration,
-      caloriesBurn
+      caloriesBurn:totalCaloriesBurn
     });
 
    
