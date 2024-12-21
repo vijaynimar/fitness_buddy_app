@@ -16,7 +16,9 @@ const profileSchema=new Schema({
         required:true,
         enum:["running","weightlifting","yoga","cardio"]
     },
-    fitnessGoals:{type:String,required:true},
+    fitnessGoals:{type:String,required:true,
+        enum:["weight gain","weight lose","bulking","flexibility","muscle build"]
+    },
     createdAt:{
         type:Date,default:Date.now
     }
