@@ -6,4 +6,4 @@ const oootp=new Schema({
 })
 
 const ootp=model("otp",oootp)
-export {ootp} 
+export {ootp}  
