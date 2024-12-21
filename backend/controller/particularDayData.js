@@ -7,7 +7,7 @@ export const getWorkoutDataForDay = async (req, res) => {
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
     const currentDayIndex = new Date().getDay();
     const currentDay = daysOfWeek[currentDayIndex];
-  
+    console.log(currentDay);
     const token = req.headers["authorization"];
   
     try {
