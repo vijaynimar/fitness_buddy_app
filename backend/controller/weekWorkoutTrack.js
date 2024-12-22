@@ -17,19 +17,20 @@ export const weeklyProgress = async (req, res) => {
       ];
   
       const currentDayIndex = new Date().getDay();
+      // console.log(currentDayIndex);
       const currentDay = daysOfWeek[currentDayIndex];
-  
+      // console.log(currentDay);
       const decoded = jwt.verify(token, jwtKey);
-      const { email } = decoded;
-      
-      let data = await workout.findOne({ email });
-      console.log(data);
+      const {username, email } = decoded;
+      // console.log(username,email);
+      let data = await workout.findOne({ email })
+      // console.log(data);
       if (!data) {
         return res.status(404).json({ error: "No workout data found for this user." });
       }
   
-      const startOfWeekIndex = daysOfWeek.indexOf("monday");
-  
+      const startOfWeekIndex = daysOfWeek.indexOf(currentDay);
+      console.log(startOfWeekIndex);
       let totalCaloriesBurned = 0;
       let totalDuration = 0;
   
@@ -38,7 +39,8 @@ export const weeklyProgress = async (req, res) => {
   
         if (data.weekWorkouts[day]) {
           data.weekWorkouts[day].forEach(workout => {
-            const caloriesBurn = workout.caloriesBurn || 0; 
+            // console.log(workout.caloriesBurn);
+            const caloriesBurn = workout.caloriesBurn; 
             totalCaloriesBurned += caloriesBurn;
             totalDuration += workout.workoutDuration;
           });

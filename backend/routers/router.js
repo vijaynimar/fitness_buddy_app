@@ -27,6 +27,9 @@ userRouter.get("/getWorkoutDataForDay",getWorkoutDataForDay)
 userRouter.post("/profile",profileData)
 userRouter.get("/getProfile",getProfile)
 userRouter.get("/getBuddies",getBuddies)
+// userRouter.get("/github/callback",gitHubCallback)
+
+
 
 userRouter.post("/workoutUpdate",workoutUpdate)
 userRouter.get("/weekProgress",weeklyProgress)
