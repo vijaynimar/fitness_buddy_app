@@ -3,12 +3,16 @@ import connection from "./db.js"
 import { userRouter } from "./routers/router.js"
 import { workout } from "./models/workoutTracking.js"
 import cron from "node-cron"
-// import cors from "cors"
+import cors from "cors"
 const app=express()
 const Port=2999
 connection()
-
-// app.use(cors());
+app.use(cors({
+    origin: ["https://fitness-buddy-app.onrender.com", "https://spontaneous-clafoutis-e0ec46.netlify.app"], 
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
+}));
 cron.schedule("1 0 * * 1",async()=>{
     try{
         await workout.deleteMany({})
