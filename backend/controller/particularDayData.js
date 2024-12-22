@@ -38,7 +38,7 @@ export const getWorkoutDataForDay = async (req, res) => {
       console.log("Total Calories Burned:", totalCaloriesBurned);
   
       return res.status(200).json({
-        message: `Total workout data for ${currentDay}`,
+        message: `${currentDay}`,
         totalWorkoutDuration,
         totalCaloriesBurned,
       });
