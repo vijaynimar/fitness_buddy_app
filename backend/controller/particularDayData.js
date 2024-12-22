@@ -7,7 +7,7 @@ export const getWorkoutDataForDay = async (req, res) => {
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
     const currentDayIndex = new Date().getDay();
     const currentDay = daysOfWeek[currentDayIndex];
-    console.log(currentDay);
+    // console.log(currentDay);
     const token = req.headers["authorization"];
   
     try {
@@ -28,14 +28,14 @@ export const getWorkoutDataForDay = async (req, res) => {
         return res.status(404).json({ message: `No workout data found for ${currentDay}.` });
       }
   
-      console.log("Day workouts for today:", dayWorkouts); // Check if workouts exist for today
+      // console.log("Day workouts for today:", dayWorkouts); // Check if workouts exist for today
       
       // Calculate the total workout duration and total calories burned
       const totalWorkoutDuration = dayWorkouts.reduce((acc, workout) => acc + workout.workoutDuration, 0);
-      console.log("Total Workout Duration:", totalWorkoutDuration);
+      // console.log("Total Workout Duration:", totalWorkoutDuration);
   
       const totalCaloriesBurned = dayWorkouts.reduce((acc, workout) => acc + workout.caloriesBurn, 0);
-      console.log("Total Calories Burned:", totalCaloriesBurned);
+      // console.log("Total Calories Burned:", totalCaloriesBurned);
   
       return res.status(200).json({
         message: `${currentDay}`,
