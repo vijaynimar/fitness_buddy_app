@@ -13,9 +13,7 @@ import { weeklyProgress } from "../controller/weekWorkoutTrack.js";
 const userRouter=Router()
 
 
-userRouter.get("/vijay",(req,res)=>{
-    res.send("vijay")
-})
+
 userRouter.post("/signin",signIn)
 userRouter.post("/login",loginUser)  
 userRouter.post("/forgot-password",forgotPassword)
@@ -27,7 +25,7 @@ userRouter.get("/getWorkoutDataForDay",getWorkoutDataForDay)
 userRouter.post("/profile",profileData)
 userRouter.get("/getProfile",getProfile)
 userRouter.get("/getBuddies",getBuddies)
-// userRouter.get("/github/callback",gitHubCallback)
+
 
 
 
